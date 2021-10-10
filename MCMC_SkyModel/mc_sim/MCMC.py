@@ -89,6 +89,23 @@ class MCMC:
             # less likely x_new are less likely to be accepted
             return (u < (np.exp(new_loglik - old_log_lik)))
 
+    def thining(self,dataframe,num_samples ):
+        stack = pd.DataFrame()
+        walkers = dataframe.walker.unique()
+        
+        for walker in walkers:
+            
+            selected = dataframe.loc[dataframe['walker'].isin([walker])]
+            
+            
+            walker_DF = selected.tail(selected.shape[0] - int(num_samples*0.1)) #Dropping
+            walker_DF = walker_DF.nsmallest(int(num_samples*0.75),['likelihood']) #Thining
+            
+            stack = pd.concat([stack,walker_DF],ignore_index=True)
+        
+    
+        return stack.sort_values(by=['iteration'])
+    
     def MH(self,sky_model,parameters,t_sky_data,sigma_parameter,evaluateLogLikelihood,initial_point,num_walkers,num_samples,burn_sample):
         accepted  = 0.0
         row=0
