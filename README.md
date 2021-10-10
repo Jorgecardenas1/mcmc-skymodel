@@ -1,2 +1,5 @@
-# mcmc-skymodel
-this repo has a full project for MCMC Metropolis Hastings. The project's goal is to infer or estimate the parameters of a model and the distributions of those parameters.
+<h1 align="center">Parameter Estimation for Tsky Model</h1>
+<h2 align="center">Markov Chain Monte Carlo - Metropolis Hastings</h2>
+
+<img src="https://img.shields.io/badge/v1-mcmc-green" >
+<img src="https://img.shields.io/badge/python-3-yellowgreen" >
