@@ -76,7 +76,7 @@ class Sky_model:
                 "min":1700,
                 "max":1760,
                 "nu" : values[0],
-                "sigma" : 100
+                "sigma" : 10
             },
             "b1": {
                 "initial":-0.08,

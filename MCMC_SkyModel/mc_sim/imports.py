@@ -51,11 +51,7 @@ except:
     import scipy
 
 os.system('pip install jupyter_contrib_nbextensions')
-    
- 
 
-
-    
 from tqdm import tqdm
 import seaborn as sns
 import math
@@ -67,4 +63,5 @@ from IPython.core.display import HTML
 from bokeh.plotting import figure, show
 from scipy import stats
 
-    
+from sklearn.neighbors import KernelDensity
+from statsmodels.graphics.tsaplots import plot_acf  
