@@ -36,8 +36,8 @@ class MCMC:
         intermediate_sample=[]
         for key, value in params.items():
 
-            selected_samples = np.random.uniform(low=value["min"], high=value["max"], size=1)
-            #selected_samples = np.random.normal(value["nu"], value["sigma"], 1*N)
+            #selected_samples = np.random.uniform(low=value["min"], high=value["max"], size=1)
+            selected_samples = np.random.normal(value["nu"], value["sigma"], 1*N)
             intermediate_sample.append(selected_samples)
 
         return np.mean(np.array(intermediate_sample).T,axis=0)
@@ -100,7 +100,7 @@ class MCMC:
             
             walker_DF = selected.tail(selected.shape[0] - int(num_samples*0.05)) #Dropping
             
-            walker_DF = walker_DF[walker_DF.index % 50 == 0] 
+            #walker_DF = walker_DF[walker_DF.index % 25 == 0] 
             
             #walker_DF = walker_DF.nsmallest(int(num_samples*0.75),['likelihood']) #Thining
             
