@@ -35,7 +35,7 @@ class Sky_model:
                 "min":1700,
                 "max":1760,
                 "nu" : 1730,
-                "sigma" : 10
+                "sigma" : 50
             },
             "b1": {
                 "initial":-0.08,
@@ -63,7 +63,7 @@ class Sky_model:
                 "min":200,
                 "max":2000,
                 "nu" : 500,
-                "sigma" : 20
+                "sigma" : 10
             },
         }
         
@@ -76,7 +76,7 @@ class Sky_model:
                 "min":1700,
                 "max":1760,
                 "nu" : values[0],
-                "sigma" : 10
+                "sigma" : 50
             },
             "b1": {
                 "initial":-0.08,
@@ -104,7 +104,7 @@ class Sky_model:
                 "min":200,
                 "max":2000,
                 "nu" : values[4],
-                "sigma" : 20
+                "sigma" : 10
             },
         }
         return parameters
